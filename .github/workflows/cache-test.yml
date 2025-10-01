@@ -18,11 +18,11 @@ jobs:
           node-version: 18
 
       - name: Cache node_modules
-        id: cache-node-modules
+        id: cache-step
         uses: actions/cache@v4
         with:
           path: node_modules
           key: cache-f6272a4
 
-      - name: prime-cache-f6272a4   # 👈 exact step name required
-        run: echo "Cache result: ${{ steps.cache-node-modules.outputs.cache-hit }}"
+      - name: prime-cache-f6272a4 
+        run: echo "Cache result: ${{ steps.cache-step.outputs.cache-hit }}"
